@@ -1,0 +1,57 @@
+#include <iostream>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	int r, c, matA[r][c], matB[r][c], matC[r][c];
+	printf("-----SUMA DE MATRICES-----\n");
+	printf("Inserta el numero de renglones: ");
+	scanf("%i", &r);
+	printf("Inserta el numero de columnas: ");
+	scanf("%i", &c);
+	printf("LLENADO DE LA PRIMER MATRIZ\n");
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			printf("Inserte el numero para la posicion %i, %i: ", i+1, j+1);
+			scanf("%i\n", &matA[i][j]);
+		}
+	}
+	printf("LLENADO DE LA SEGUNDA MATRIZ\n");
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			printf("Inserte el numero para la posicion %i, %i: ", i+1, j+1);
+			scanf("%i\n", &matB[i][j]);
+		}
+	}
+	printf("PRIMERA MATRIZ\n");
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			printf("%i\n", matA[i][j]);
+		}
+	}
+	printf("SEGUNDA MATRIZ\n");
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			printf("%i\n", matB[i][j]);
+		}
+	}
+	printf("OPERACIONES DE LAS MATRICES\n");
+	
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			if(i==j){
+				matC[i][j]=matA[i][j]-matB[i][j];
+			}
+			else{
+				matC[i][j]=matA[i][j]+matB[i][j];	
+			}
+			
+		}
+	}
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			printf("%i\n", matC[i][j]);
+		}
+	}
+	return 0;
+}
